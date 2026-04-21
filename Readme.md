@@ -7,6 +7,7 @@
 ![Students](https://img.shields.io/badge/NMIMS-Engineering%20Students-blue?style=for-the-badge)
 ![Batch](https://img.shields.io/badge/Batch-IT%20&%20CE%20(Batch%202)-red?style=for-the-badge)
 ![Progress](https://img.shields.io/badge/Day%201-Completed-brightgreen?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Day%202-Completed-brightgreen?style=for-the-badge)
 ![Training](https://img.shields.io/badge/Training-In%20Progress-success?style=for-the-badge)
 
 ### 🚀 *Master Data Structures & Algorithms with Java!*
@@ -67,16 +68,26 @@ Day 1 - Collections & Arrays:
 ✅ Remove Duplicates Problem
 ✅ Practice Problems
 
-Day 2 - Collections Advanced & Array Algorithms:
+Day 2 - Interfaces: Set & Map:
+████████████████████████████████ 100%
+
+✅ Set Interface (HashSet, LinkedHashSet, TreeSet)
+✅ Iterator & Iteration Patterns
+✅ Check Duplicates Using Sets
+✅ Map Interface (HashMap, TreeMap, LinkedHashMap)
+✅ HashMap Operations & Methods
+✅ Entry Set Iteration
+✅ Frequency Counting Problems
+
+Day 3 - Advanced Techniques & Queue:
 🔜 IN PROGRESS
 
-✅ Sets (HashSet, LinkedHashSet, TreeSet)
-✅ Map Interface (HashMap, TreeMap, LinkedHashMap)
-✅ Queue Interface (PriorityQueue, Deque)
-✅ Collections Utility Class
+⏳ Queue Interface (PriorityQueue, Deque)
+⏳ Two Pointers Technique
 ⏳ Sliding Window Technique
 ⏳ Prefix Sum Algorithm
-⏳ Array Problem Solving
+⏳ Recursion Basics
+⏳ Problem Solving & Practice
 ```
 
 ---
@@ -88,9 +99,9 @@ graph LR
     A[📦 Arrays] --> B[📋 ArrayList]
     B --> C[🎯 Collections]
     C --> D[📚 Lists]
-    D --> E[🗺️ Map]
-    E --> F[📬 Queue]
-    F --> G[🛠️ Collections Utils]
+    D --> E[🗺️ Set]
+    E --> F[🗺️ Map]
+    F --> G[📬 Queue]
     G --> H[🪟 Sliding Window]
     H --> I[➕ Prefix Sum]
     I --> J[🔥 Problem Solving]
@@ -99,8 +110,8 @@ graph LR
     style B fill:#90EE90
     style C fill:#90EE90
     style D fill:#90EE90
-    style E fill:#FFD700
-    style F fill:#FFD700
+    style E fill:#90EE90
+    style F fill:#90EE90
     style G fill:#FFD700
     style H fill:#87CEEB
     style I fill:#87CEEB
@@ -733,9 +744,624 @@ public class RemoveDuplicates {
 
 ---
 
+## ✅ Problems Covered - Day 2
+
+### 📋 **Set & Map Interfaces**
+
+| # | Problem | Difficulty | Concept | Status |
+|:-:|:--------|:----------:|:--------|:------:|
+| 1 | Set Interface Basics | 🟢 Easy | HashSet, LinkedHashSet, TreeSet | ✅ |
+| 2 | Iterator Pattern | 🟢 Easy | Iterator, hasNext(), next() | ✅ |
+| 3 | Check Duplicates Method 1 | 🟡 Medium | Set Size Comparison | ✅ |
+| 4 | Check Duplicates Method 2 | 🟡 Medium | Set + List Combination | ✅ |
+| 5 | HashMap Basic Operations | 🟡 Medium | put(), get(), containsKey() | ✅ |
+| 6 | HashMap Frequency Counting | 🟡 Medium | Frequency Map Pattern | ✅ |
+| 7 | Entry Set Iteration | 🟡 Medium | Map.Entry, entrySet() | ✅ |
+
+---
+
+## 📚 Topics Covered - Day 2
+
+<details open>
+<summary><h3>📦 Set Interface - Complete Guide</h3></summary>
+
+> **Set** is a collection that contains no duplicate elements. It models the mathematical set abstraction.
+
+### Set Hierarchy
+
+```
+Collection (Interface)
+    └── Set (Interface)
+        ├── HashSet ← Most used, unordered
+        ├── LinkedHashSet ← Insertion order
+        └── TreeSet ← Sorted order
+```
+
+---
+
+### 1️⃣ **HashSet - Unordered Unique Elements**
+
+> **HashSet** stores unique elements in no particular order using hash table internally.
+
+#### 🔧 Basic Operations
+
+```java
+import java.util.*;
+
+public class HashSetDemo {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        
+        // ADD - Insert element | O(1) average
+        set.add(43);
+        set.add(51);
+        set.add(12);
+        set.add(99);
+        set.add(51);  // Duplicate - will be ignored
+        
+        System.out.println("Set: " + set);
+        // Output: [12, 43, 51, 99] (order not guaranteed)
+        
+        // CONTAINS - Check if element exists | O(1) average
+        System.out.println(set.contains(434));  // false
+        System.out.println(set.contains(43));   // true
+        
+        // REMOVE - Delete element | O(1) average
+        set.remove(51);
+        System.out.println("After remove: " + set);
+        // Output: [12, 43, 99]
+        
+        // SIZE - Get total elements | O(1)
+        System.out.println("Size: " + set.size());  // 3
+        
+        // isEmpty - Check if empty | O(1)
+        System.out.println("Is empty: " + set.isEmpty());  // false
+    }
+}
+```
+
+**Key Characteristics:**
+- ✅ No duplicates allowed
+- ✅ Unordered (random order)
+- ✅ Hash-based implementation
+- ✅ O(1) average add, remove, contains
+- ✅ No index-based access
+
+#### ⏱️ HashSet Complexity
+
+| Operation | Time | Space |
+|:----------|:----:|:-----:|
+| Add | O(1) avg, O(n) worst | O(n) |
+| Remove | O(1) avg, O(n) worst | — |
+| Contains | O(1) avg, O(n) worst | — |
+| Size | O(1) | — |
+
+---
+
+### 2️⃣ **LinkedHashSet - Insertion Order Preserved**
+
+> **LinkedHashSet** maintains insertion order while preventing duplicates using doubly-linked list + hash table.
+
+```java
+import java.util.*;
+
+public class LinkedHashSetDemo {
+    public static void main(String[] args) {
+        Set<Integer> set = new LinkedHashSet<>();
+        
+        set.add(43);
+        set.add(51);
+        set.add(12);
+        set.add(99);
+        set.add(51);  // Duplicate ignored
+        
+        System.out.println(set);
+        // Output: [43, 51, 12, 99]  ← Order preserved!
+    }
+}
+```
+
+**When to use:**
+- ✅ Need unique elements
+- ✅ Need insertion order preserved
+- ✅ Don't need sorting
+- ❌ Slightly slower than HashSet
+
+---
+
+### 3️⃣ **TreeSet - Sorted Unique Elements**
+
+> **TreeSet** maintains sorted order while preventing duplicates using Red-Black Tree internally.
+
+```java
+import java.util.*;
+
+public class TreeSetDemo {
+    public static void main(String[] args) {
+        Set<Integer> set = new TreeSet<>();
+        
+        set.add(43);
+        set.add(51);
+        set.add(12);
+        set.add(99);
+        set.add(51);  // Duplicate ignored
+        
+        System.out.println(set);
+        // Output: [12, 43, 51, 99]  ← Automatically sorted!
+    }
+}
+```
+
+**Key Features:**
+- ✅ Sorted order (natural or custom)
+- ✅ No duplicates
+- ✅ Can get first/last elements
+- ✅ Range operations available
+- ✅ O(log n) operations
+
+```java
+// Additional operations
+TreeSet<Integer> set = new TreeSet<>();
+set.addAll(Arrays.asList(43, 51, 12, 99));
+
+System.out.println(set.first());   // 12 (smallest)
+System.out.println(set.last());    // 99 (largest)
+System.out.println(set.lower(51)); // 43 (next lower)
+System.out.println(set.higher(51)); // 99 (next higher)
+```
+
+---
+
+### 📊 Set Comparison Table
+
+| Feature | HashSet | LinkedHashSet | TreeSet |
+|:--------|:-------:|:-------------:|:-------:|
+| **Order** | Random | Insertion | Sorted |
+| **Add** | O(1) avg | O(1) avg | O(log n) |
+| **Remove** | O(1) avg | O(1) avg | O(log n) |
+| **Contains** | O(1) avg | O(1) avg | O(log n) |
+| **Memory** | Low | Medium | High |
+| **Use Case** | Speed | Order + Speed | Sorted |
+
+---
+
+</details>
+
+<details open>
+<summary><h3>🔄 Iterator Pattern - Collection Traversal</h3></summary>
+
+> **Iterator** provides a uniform way to access elements of a collection sequentially without exposing the underlying structure.
+
+### 🎯 Iterator Basics
+
+```java
+import java.util.*;
+
+public class IteratorDemo {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        
+        int[] arr = {43, 1, 56, 11, 87, 94};
+        for(int val: arr)
+            set.add(val);
+        
+        // Create iterator
+        Iterator<Integer> it = set.iterator();
+        
+        // Traverse using iterator
+        System.out.println("Using Iterator:");
+        while(it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        // Output: 43 1 56 11 87 94
+    }
+}
+```
+
+### 📋 Iterator Methods
+
+```java
+Iterator<T> iterator = collection.iterator();
+
+// hasNext() - Check if more elements | O(1)
+while(iterator.hasNext()) {
+    // next() - Get next element | O(1)
+    T element = iterator.next();
+    
+    // remove() - Remove current element | O(1) typically
+    iterator.remove();
+}
+```
+
+### 🔄 Traversal Methods Comparison
+
+```java
+Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
+
+// Method 1: Enhanced for loop (Simplified Iterator)
+for(int val : set) {
+    System.out.println(val);
+}
+
+// Method 2: Explicit Iterator
+Iterator<Integer> it = set.iterator();
+while(it.hasNext()) {
+    System.out.println(it.next());
+}
+
+// Method 3: forEach (Java 8+)
+set.forEach(val -> System.out.println(val));
+
+// Method 4: Stream (Java 8+)
+set.stream().forEach(System.out::println);
+```
+
+---
+
+</details>
+
+<details open>
+<summary><h3>🔍 Check Duplicates - Using Sets</h3></summary>
+
+> **Problem:** Determine if an array contains duplicate elements efficiently.
+
+### ⚡ Approach 1: Set Size Comparison
+
+**Logic:** If set size < array length, duplicates exist!
+
+```java
+import java.util.*;
+
+public class CheckDuplicatesMethod1 {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        
+        int[] arr = {1, 4, 1, 4, 2, 6, 7, 9, 1};
+        // int[] arr = {1, 4};  // Try this too
+        
+        for(int val : arr) {
+            set.add(val);
+        }
+        
+        if (arr.length != set.size()) {
+            System.out.println(true);  // Duplicates found
+        }
+        else {
+            System.out.println(false); // No duplicates
+        }
+    }
+}
+```
+
+**How it works:**
+```
+Array:  [1, 4, 1, 4, 2, 6, 7, 9, 1]
+          ↓
+Set:    {1, 2, 4, 6, 7, 9}
+
+arr.length = 9
+set.size() = 6
+
+9 != 6 → Duplicates exist! ✅
+```
+
+**Complexity:**
+- ⏱️ **Time:** O(n)
+- 💾 **Space:** O(n)
+
+---
+
+### 🔎 Approach 2: Set Contains Check + List Collection
+
+**Logic:** Track which duplicates were found!
+
+```java
+import java.util.*;
+
+public class CheckDuplicatesMethod2 {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        List<Integer> duplicates = new ArrayList<>();
+        
+        int[] arr = {1, 4, 1, 4, 2, 6, 7, 9, 1};
+        
+        boolean hasDuplicates = false;
+        
+        for(int i = 0; i < arr.length; i++) {
+            if(set.contains(arr[i])) {
+                // Element already in set = duplicate found!
+                duplicates.add(arr[i]);
+                hasDuplicates = true;
+            }
+            set.add(arr[i]);
+        }
+        
+        System.out.println("Has Duplicates: " + hasDuplicates);
+        System.out.println("Duplicates Found: " + duplicates);
+    }
+}
+```
+
+**Dry Run:**
+```
+Step 1: arr[0]=1
+        set doesn't contain 1 → add 1
+        set = {1}
+
+Step 2: arr[1]=4
+        set doesn't contain 4 → add 4
+        set = {1, 4}
+
+Step 3: arr[2]=1
+        set contains 1! → add to duplicates
+        duplicates = [1]
+        set = {1, 4}
+
+Step 4: arr[3]=4
+        set contains 4! → add to duplicates
+        duplicates = [1, 4]
+        set = {1, 4}
+
+Step 5: arr[4]=2
+        set doesn't contain 2 → add 2
+        set = {1, 4, 2}
+
+... continue ...
+
+Final Result:
+hasDuplicates = true
+duplicates = [1, 4, 1]
+```
+
+**Complexity:**
+- ⏱️ **Time:** O(n)
+- 💾 **Space:** O(n)
+- ✨ **Advantage:** Identifies which elements are duplicated
+
+---
+
+### 📊 Method Comparison
+
+| Aspect | Method 1 | Method 2 |
+|:-------|:--------:|:--------:|
+| **Time** | O(n) | O(n) |
+| **Space** | O(n) | O(n) |
+| **Tells duplicates** | ❌ No | ✅ Yes |
+| **Code length** | Shorter | Longer |
+| **When to use** | Just check | Need details |
+
+---
+
+</details>
+
+<details open>
+<summary><h3>🗺️ Map Interface - Key-Value Pairs</h3></summary>
+
+> **Map** represents a mapping from keys to values. Each key maps to exactly one value. No duplicate keys allowed.
+
+### Map Hierarchy
+
+```
+Map (Interface)
+├── HashMap ← Unordered, most used
+├── LinkedHashMap ← Insertion order
+├── TreeMap ← Sorted keys
+└── Hashtable (Legacy)
+```
+
+---
+
+### 1️⃣ **HashMap - Fast Key-Value Mapping**
+
+> **HashMap** uses hash table to store key-value pairs with O(1) average access time.
+
+#### 🔧 Basic Operations
+
+```java
+import java.util.*;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        
+        // PUT - Insert key-value pair | O(1) average
+        map.put("Shivam", 99);
+        map.put("Sejal", 12);
+        map.put("Tithee", 56);
+        
+        System.out.println(map);
+        // Output: {Tithee=56, Shivam=99, Sejal=12}
+        
+        // PUT IF ABSENT - Insert only if key doesn't exist | O(1)
+        map.putIfAbsent("Shiva", 90);  // New key, added
+        map.putIfAbsent("Shivam", 100); // Key exists, ignored
+        
+        System.out.println(map);
+        // Output: {Shiva=90, Tithee=56, Shivam=99, Sejal=12}
+        
+        // GET - Retrieve value by key | O(1) average
+        System.out.println(map.get("Shivam"));  // 99
+        System.out.println(map.get("Mohini"));  // null (key doesn't exist)
+        
+        // CONTAINS KEY - Check if key exists | O(1) average
+        System.out.println(map.containsKey("Shivam"));  // true
+        System.out.println(map.containsKey("Mohini"));  // false
+        
+        // CONTAINS VALUE - Check if value exists | O(n)
+        System.out.println(map.containsValue(56));   // true
+        System.out.println(map.containsValue(100));  // false
+        
+        // REMOVE - Delete key-value pair | O(1) average
+        map.remove("Sejal");
+        System.out.println("After remove: " + map);
+        // Output: {Shiva=90, Tithee=56, Shivam=99}
+        
+        // SIZE - Get total pairs | O(1)
+        System.out.println("Size: " + map.size());  // 3
+    }
+}
+```
+
+#### ⏱️ HashMap Complexity
+
+| Operation | Time | Space |
+|:----------|:----:|:-----:|
+| Put | O(1) avg, O(n) worst | O(n) |
+| Get | O(1) avg, O(n) worst | — |
+| Remove | O(1) avg, O(n) worst | — |
+| Contains | O(1) avg, O(n) worst | — |
+| Size | O(1) | — |
+
+---
+
+### 2️⃣ **HashMap - Entry Set Iteration**
+
+> **Entry Set** provides efficient iteration over key-value pairs without calculating value again.
+
+```java
+import java.util.*;
+
+public class HashMapIterationDemo {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        
+        map.put("Shivam", 99);
+        map.put("Sejal", 12);
+        map.put("Tithee", 56);
+        
+        System.out.println("Method 1: Using entrySet()");
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry);
+            // Output: Shivam=99, Sejal=12, Tithee=56
+        }
+        
+        System.out.println("\nMethod 2: Get key and value separately");
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key + " → " + value);
+        }
+        
+        System.out.println("\nMethod 3: Using keySet()");
+        for (String key : map.keySet()) {
+            System.out.println(key + " → " + map.get(key));
+        }
+        
+        System.out.println("\nMethod 4: Using values()");
+        for (Integer value : map.values()) {
+            System.out.println(value);
+        }
+    }
+}
+```
+
+**Why use entrySet()?**
+```
+❌ INEFFICIENT - Calculates value twice:
+for (String key : map.keySet()) {
+    map.get(key);  // O(1) but repeated lookup
+}
+
+✅ EFFICIENT - Get entry once:
+for (Map.Entry<String, Integer> e : map.entrySet()) {
+    e.getKey();   // O(1)
+    e.getValue(); // O(1)
+}
+```
+
+---
+
+### 3️⃣ **HashMap Frequency Counting - Practical Problem**
+
+> **Problem:** Find all elements appearing more than n/3 times in an array.
+
+```java
+import java.util.*;
+
+public class FrequencyCountingDemo {
+    public static void main(String[] args) {
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        int[] arr = {1, 4, 1, 4, 2, 1, 7, 9, 1};
+        
+        // Step 1: Count frequencies
+        for (int i = 0; i < arr.length; i++) {
+            if(map.containsKey(arr[i])) {
+                // Key exists, increment count
+                map.put(arr[i], map.get(arr[i]) + 1);
+            }
+            else {
+                // New key, add with count 1
+                map.put(arr[i], 1);
+            }
+        }
+        
+        System.out.println("Frequency Map: " + map);
+        // Output: {1=4, 2=1, 4=2, 7=1, 9=1}
+        
+        // Step 2: Find elements appearing > n/3 times
+        int threshold = arr.length / 3;
+        System.out.println("\nElements appearing more than " + threshold + " times:");
+        
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > threshold) {
+                System.out.println(entry.getKey() + " appears " + entry.getValue() + " times");
+            }
+        }
+    }
+}
+```
+
+**Dry Run:**
+```
+Array: [1, 4, 1, 4, 2, 1, 7, 9, 1]
+n = 9, threshold = 9/3 = 3
+
+i=0: arr[0]=1 → map = {1: 1}
+i=1: arr[1]=4 → map = {1: 1, 4: 1}
+i=2: arr[2]=1 → map = {1: 2, 4: 1}
+i=3: arr[3]=4 → map = {1: 2, 4: 2}
+i=4: arr[4]=2 → map = {1: 2, 4: 2, 2: 1}
+i=5: arr[5]=1 → map = {1: 3, 4: 2, 2: 1}
+i=6: arr[6]=7 → map = {1: 3, 4: 2, 2: 1, 7: 1}
+i=7: arr[7]=9 → map = {1: 3, 4: 2, 2: 1, 7: 1, 9: 1}
+i=8: arr[8]=1 → map = {1: 4, 4: 2, 2: 1, 7: 1, 9: 1}
+
+Final Map: {1: 4, 2: 1, 4: 2, 7: 1, 9: 1}
+
+Check threshold = 3:
+- 1 appears 4 times (4 > 3) ✅
+- Others appear ≤ 3 times ❌
+
+Result: Element 1 appears more than n/3 times!
+```
+
+**Complexity:**
+- ⏱️ **Time:** O(n)
+- 💾 **Space:** O(n)
+
+---
+
+### 📊 Map Comparison Table
+
+| Feature | HashMap | LinkedHashMap | TreeMap |
+|:--------|:-------:|:-------------:|:-------:|
+| **Order** | Random | Insertion | Sorted by key |
+| **Put** | O(1) avg | O(1) avg | O(log n) |
+| **Get** | O(1) avg | O(1) avg | O(log n) |
+| **Contains** | O(1) avg | O(1) avg | O(log n) |
+| **Memory** | Low | Medium | Medium |
+| **Use Case** | Speed | Order + Speed | Sorted keys |
+
+---
+
+</details>
+
+---
+
 ## 📅 What's Coming Next?
 
-### 🔜 Day 2: Collections Advanced & Array Algorithms
+### 🔜 Day 3: Advanced Techniques & Queue
 
 ```
 ✅ WILL COVER:
@@ -795,7 +1421,7 @@ DAY 1 SUMMARY:
    - List: ordered with duplicates
    - Queue: FIFO processing
    - Map: key-value pairs
-   - Set: unordered, no duplicates (coming Day 2)
+   - Set: unordered, no duplicates
 
 4. LISTS:
    - ArrayList: random access O(1), add/remove O(n)
@@ -805,6 +1431,44 @@ DAY 1 SUMMARY:
    - Move Zeroes: Two Pointers technique O(n)
    - Brute Force: O(n²) time, O(1) space
    - HashSet: O(n) time, O(n) space - RECOMMENDED
+
+---
+
+DAY 2 SUMMARY:
+
+1. SETS:
+   - HashSet: O(1) average, unordered, fastest
+   - LinkedHashSet: O(1) average, maintains insertion order
+   - TreeSet: O(log n), maintains sorted order
+   - All prevent duplicates
+
+2. SET OPERATIONS:
+   - add(), remove(), contains() - all O(1) avg in HashSet
+   - Iterator pattern for traversal
+   - size(), isEmpty() for checking
+
+3. CHECK DUPLICATES:
+   - Method 1: Compare set.size() with array.length - simple
+   - Method 2: Set.contains() check - tracks duplicates
+   - Time: O(n), Space: O(n)
+
+4. MAPS:
+   - HashMap: O(1) average, unordered, fastest
+   - LinkedHashMap: O(1) average, maintains insertion order
+   - TreeMap: O(log n), maintains sorted keys
+   - Each key maps to exactly one value
+
+5. MAP OPERATIONS:
+   - put(), get(), remove() - O(1) avg in HashMap
+   - containsKey() - O(1) avg
+   - entrySet() for efficient iteration
+   - Frequency counting pattern
+
+6. FREQUENCY COUNTING:
+   - Use map.containsKey() to check if element exists
+   - Increment count if exists, else put with count 1
+   - Iterate using entrySet() for efficiency
+   - Time: O(n), Space: O(n)
 ```
 
 ---
@@ -885,15 +1549,22 @@ LinkedList<String> commands = new LinkedList<>();
   - Move Zeroes to End (Two Pointers)
   - Duplicate removal (multiple approaches)
 
-🔜 Next (Day 2):
-  - Sets (HashSet, LinkedHashSet, TreeSet)
-  - Map interface (HashMap, TreeMap, LinkedHashMap)
-  - Queue interface
-  - Collections utility class
-  - Sliding window technique
-  - Prefix sum algorithm
+✅ Completed (Day 2):
+  - Set Interface (HashSet, LinkedHashSet, TreeSet)
+  - Iterator Pattern & Traversal
+  - Check Duplicates using Sets (2 methods)
+  - Map Interface (HashMap, LinkedHashMap, TreeMap)
+  - HashMap Operations & Entry Set Iteration
+  - Frequency Counting Problem Pattern
 
-📈 Overall Progress: 1/10 days completed (10%)
+🔜 Next (Day 3):
+  - Queue Interface (PriorityQueue, Deque)
+  - Two Pointers Technique
+  - Sliding Window Technique
+  - Prefix Sum Algorithm
+  - Recursion Basics
+
+📈 Overall Progress: 2/10 days completed (20%)
 ```
 
 ---
@@ -1006,10 +1677,10 @@ import java.util.*;
 
 ---
 
-## 🎯 Day 1 Code Summary
+## 🎯 Day 1 & 2 Code Summary
 
 ```java
-// ========== ARRAYS ==========
+// ========== DAY 1: ARRAYS ==========
 int[] arr = {0, 4, 0, 9};
 int j = 0;
 for (int i = 0; i < arr.length; i++) {
@@ -1022,31 +1693,83 @@ for (int i = 0; i < arr.length; i++) {
 }
 // Result: [4, 9, 0, 0]
 
-// ========== ARRAYLIST OPERATIONS ==========
+// ========== DAY 1: ARRAYLIST OPERATIONS ==========
 ArrayList<Integer> arrList = new ArrayList<>();
 arrList.add(2);
 arrList.add(1);
 arrList.add(3);
-arrList.add(4, 54);
+arrList.add(1, 54);
 arrList.set(0, 5);
 arrList.remove(2);
 
-// ========== REMOVE DUPLICATES ==========
-ArrayList<Integer> arrList = new ArrayList<>();
-int[] arr = {1, 4, 1, 1, 1, 1, 1, 4, 3, 133, 345, 13, 13};
-for (int val: arr)
-    arrList.add(val);
+// ========== DAY 2: SET BASICS ==========
+Set<Integer> set = new HashSet<>();
+set.add(43);
+set.add(51);
+set.add(12);
+set.add(51);  // Ignored (duplicate)
+System.out.println(set);  // [12, 43, 51]
 
-for (int i = 0; i < arrList.size(); i++) {
-    for (int j = i + 1; j < arrList.size(); j++) {
-        if(arrList.get(i).equals(arrList.get(j))){
-            arrList.remove(j);
-            j--;
-        }
+// ========== DAY 2: CHECK DUPLICATES - METHOD 1 ==========
+Set<Integer> set = new HashSet<>();
+int[] arr = {1, 4, 1, 4, 2, 6, 7, 9, 1};
+for(int val : arr)
+    set.add(val);
+
+if (arr.length != set.size()) {
+    System.out.println(true);  // Duplicates found
+}
+
+// ========== DAY 2: CHECK DUPLICATES - METHOD 2 ==========
+Set<Integer> set = new HashSet<>();
+List<Integer> duplicates = new ArrayList<>();
+int[] arr = {1, 4, 1, 4, 2, 6, 7, 9, 1};
+boolean hasDuplicates = false;
+
+for(int i = 0; i < arr.length; i++) {
+    if(set.contains(arr[i])) {
+        duplicates.add(arr[i]);
+        hasDuplicates = true;
+    }
+    set.add(arr[i]);
+}
+System.out.println("Duplicates: " + duplicates);  // [1, 4, 1]
+
+// ========== DAY 2: ITERATOR ==========
+Iterator<Integer> it = set.iterator();
+while(it.hasNext()) {
+    System.out.print(it.next() + " ");
+}
+
+// ========== DAY 2: HASHMAP BASICS ==========
+HashMap<String, Integer> map = new HashMap<>();
+map.put("Shivam", 99);
+map.put("Sejal", 12);
+map.putIfAbsent("Shiva", 90);
+
+System.out.println(map.get("Shivam"));      // 99
+System.out.println(map.containsKey("Sejal")); // true
+System.out.println(map.containsValue(12));  // true
+
+// ========== DAY 2: HASHMAP FREQUENCY COUNTING ==========
+Map<Integer, Integer> map = new HashMap<>();
+int[] arr = {1, 4, 1, 4, 2, 1, 7, 9, 1};
+
+for (int i = 0; i < arr.length; i++) {
+    if(map.containsKey(arr[i])) {
+        map.put(arr[i], map.get(arr[i]) + 1);
+    }
+    else {
+        map.put(arr[i], 1);
     }
 }
-System.out.println(arrList);
-// Output: [1, 4, 3, 133, 345, 13]
+
+System.out.println(map);  // {1=4, 2=1, 4=2, 7=1, 9=1}
+
+// ========== DAY 2: ENTRY SET ITERATION ==========
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " → " + entry.getValue());
+}
 ```
 
 <br>
