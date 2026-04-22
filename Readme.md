@@ -6,8 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Active%20Learning-success?style=for-the-badge)
 ![Students](https://img.shields.io/badge/NMIMS-Engineering%20Students-blue?style=for-the-badge)
 ![Batch](https://img.shields.io/badge/Batch-IT%20&%20CE%20(Batch%202)-red?style=for-the-badge)
-![Progress](https://img.shields.io/badge/Day%201-Completed-brightgreen?style=for-the-badge)
-![Progress](https://img.shields.io/badge/Day%202-Completed-brightgreen?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Day%203-Completed-brightgreen?style=for-the-badge)
 ![Training](https://img.shields.io/badge/Training-In%20Progress-success?style=for-the-badge)
 
 ### 🚀 *Master Data Structures & Algorithms with Java!*
@@ -79,46 +78,85 @@ Day 2 - Interfaces: Set & Map:
 ✅ Entry Set Iteration
 ✅ Frequency Counting Problems
 
-Day 3 - Advanced Techniques & Queue:
+Day 3 - Queue, Comparators & Advanced Techniques:
+████████████████████████████████ 100%
+
+✅ Queue Interface (Queue, Deque, PriorityQueue)
+✅ ArrayDeque - Double-Ended Queue
+✅ PriorityQueue - Min & Max Heaps
+✅ Two Pointers Technique (All 3 types)
+✅ Sliding Window Technique (Both types)
+✅ Comparators - Custom sorting
+✅ Sorting with Comparators
+✅ Problem Solving & Practice
+✅ Maximum Sum Subarray of size K
+
+Day 4 - Recursion & Pattern Matching:
 🔜 IN PROGRESS
 
-⏳ Queue Interface (PriorityQueue, Deque)
-⏳ Two Pointers Technique
-⏳ Sliding Window Technique
-⏳ Prefix Sum Algorithm
-⏳ Recursion Basics
+⏳ Regular Expressions (Pattern Matching)
+⏳ Recursion Basics & Base Cases
+⏳ Recursion with Strings
+⏳ Recursion with Arrays
+⏳ Sorting Using Recursion (Merge Sort, Quick Sort)
+⏳ Advanced Recursion Problems
 ⏳ Problem Solving & Practice
 ```
 
 ---
 
-## 🗺️ Learning Path
+## 🗺️ Learning Path 
 
 ```mermaid
-graph LR
-    A[📦 Arrays] --> B[📋 ArrayList]
-    B --> C[🎯 Collections]
-    C --> D[📚 Lists]
-    D --> E[🗺️ Set]
-    E --> F[🗺️ Map]
-    F --> G[📬 Queue]
-    G --> H[🪟 Sliding Window]
-    H --> I[➕ Prefix Sum]
-    I --> J[🔥 Problem Solving]
+graph TB
+    subgraph Day1["📅 DAY 1: Collections & Arrays"]
+        A["📦 Arrays"] --> B["📋 ArrayList"]
+        B --> C["🎯 Collections"]
+        C --> D["📚 Lists"]
+        D --> E["🔧 Move Zeroes"]
+        E --> F["🗑️ Remove Duplicates"]
+    end
     
-    style A fill:#90EE90
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#90EE90
-    style E fill:#90EE90
-    style F fill:#90EE90
-    style G fill:#FFD700
-    style H fill:#87CEEB
-    style I fill:#87CEEB
-    style J fill:#FF6B6B
+    subgraph Day2["📅 DAY 2: Set & Map"]
+        G["🎭 Set Interface"] --> H["🔍 HashSet"]
+        H --> I["🔄 LinkedHashSet"]
+        I --> J["📊 TreeSet"]
+        J --> K["🗺️ Map Interface"]
+        K --> L["🎛️ HashMap"]
+        L --> M["📈 Frequency Counting"]
+    end
+    
+    subgraph Day3["📅 DAY 3: Queue & Advanced Techniques"]
+        N["📬 Queue Interface"] --> O["🔗 LinkedList Queue"]
+        O --> P["↔️ ArrayDeque"]
+        P --> Q["⚡ PriorityQueue"]
+        Q --> R["👥 Comparators"]
+        R --> S["🪟 Sliding Window"]
+        S --> T["👉 Two Pointers"]
+        T --> U["📊 Max Sum Subarray K"]
+    end
+    
+    subgraph Day4["📅 DAY 4: Recursion & Patterns"]
+        V["🔤 Regular Expressions"] --> W["🔀 Recursion Basics"]
+        W --> X["📝 String Recursion"]
+        X --> Y["🔢 Array Recursion"]
+        Y --> Z["🔀 Merge Sort"]
+        Z --> AA["🎯 Quick Sort"]
+        AA --> AB["🔥 Advanced Problems"]
+    end
+    
+    F --> G
+    M --> N
+    U --> V
+    
+    style Day1 fill:#90EE90,stroke:#228B22,stroke-width:3px
+    style Day2 fill:#87CEEB,stroke:#4169E1,stroke-width:3px
+    style Day3 fill:#FFD700,stroke:#FF8C00,stroke-width:3px
+    style Day4 fill:#FF6B6B,stroke:#DC143C,stroke-width:3px
 ```
 
 ---
+
 
 ## 📚 Topics Covered
 
@@ -1357,49 +1395,6 @@ Result: Element 1 appears more than n/3 times!
 
 </details>
 
----
-
-## 📅 What's Coming Next?
-
-### 🔜 Day 3: Advanced Techniques & Queue
-
-```
-✅ WILL COVER:
-├── 🏷️ Sets Interface
-│   ├── HashSet - Unordered unique
-│   ├── LinkedHashSet - Insertion order
-│   └── TreeSet - Sorted unique
-│
-├── 🗺️ Map Interface
-│   ├── HashMap - Key-value pairs
-│   ├── TreeMap - Sorted keys
-│   └── LinkedHashMap - Order preserved
-│
-├── 📬 Queue Interface
-│   ├── PriorityQueue - Min/Max heap
-│   ├── Deque - Double-ended queue
-│   └── ArrayDeque - Efficient implementation
-│
-├── 🛠️ Collections Utility Class
-│   ├── sort(), reverse(), shuffle()
-│   ├── min(), max()
-│   ├── binarySearch()
-│   └── frequency()
-│
-└── 🔥 Array Problem-Solving Techniques
-    ├── 🪟 Sliding Window
-    │   ├── Maximum sum subarray
-    │   ├── Longest substring
-    │   └── Container with most water
-    │
-    └── ➕ Prefix Sum
-        ├── Range sum queries
-        ├── Subarray sum equals K
-        └── Product of array except self
-```
-
----
-
 ## 📚 Quick Reference
 
 ### 🎓 Key Concepts to Remember
@@ -1473,25 +1468,6 @@ DAY 2 SUMMARY:
 
 ---
 
-## 🔗 Collections Class Methods (Coming Day 2)
-
-```java
-import java.util.Collections;
-
-// Will learn:
-Collections.sort(list);           // Sort list
-Collections.reverse(list);        // Reverse list
-Collections.shuffle(list);        // Randomize
-Collections.min(list);            // Minimum element
-Collections.max(list);            // Maximum element
-Collections.frequency(list, x);   // Count occurrences
-Collections.binarySearch(list, x); // Binary search
-Collections.fill(list, value);    // Fill with value
-Collections.copy(dest, src);      // Copy list
-```
-
----
-
 ## 💻 Code Structure Best Practices
 
 ```java
@@ -1553,6 +1529,823 @@ PriorityQueue   O(n)     O(log n) O(log n) O(n)
 ```
 
 ---
+
+
+<details open>
+<summary><h3>📬 Queue Interface - FIFO & Priority</h3></summary>
+
+> **Queue** is a First-In-First-Out (FIFO) collection where elements are added at the end and removed from the front.
+
+### Queue Hierarchy
+
+```
+Collection (Interface)
+    └── Queue (Interface)
+        ├── LinkedList - General purpose queue
+        ├── ArrayDeque - Efficient deque
+        ├── PriorityQueue - Ordered by priority
+        └── Deque - Double-ended queue
+```
+
+---
+
+### 1️⃣ **Queue Basics - FIFO Behavior**
+
+```java
+import java.util.*;
+
+public class QueueBasics {
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<>();
+        
+        // ADD - Insert element at end | O(1)
+        q.add(55);
+        q.add(98);
+        System.out.println("Queue: " + q);
+        // Output: [55, 98]
+        
+        // ELEMENT - Get first element without removing | O(1)
+        System.out.println("Element: " + q.element());  // 55
+        
+        // REMOVE - Delete and return first element | O(1)
+        System.out.println("Removed: " + q.remove());  // 55
+        System.out.println("Queue: " + q);  // [98]
+        
+        // Remove remaining
+        System.out.println("Removed: " + q.remove());  // 98
+        
+        // PEEK - Get first element (returns null if empty) | O(1)
+        System.out.println("Peek: " + q.peek());  // null
+    }
+}
+```
+
+**Key Methods:**
+| Method | Returns | Behavior | Exception |
+|:-------|:--------|:---------|:---------:|
+| `add(E)` | boolean | Insert at end | Full queue |
+| `offer(E)` | boolean | Insert at end | False if full |
+| `element()` | E | Get first | NoSuchElementException |
+| `peek()` | E | Get first | null |
+| `remove()` | E | Remove first | NoSuchElementException |
+| `poll()` | E | Remove first | null |
+
+---
+
+### 2️⃣ **ArrayDeque - Double-Ended Queue**
+
+> **ArrayDeque** (Array Double Ended Queue) allows insertion and removal from both ends efficiently.
+
+```java
+import java.util.*;
+
+public class ArrayDequeDemo {
+    public static void main(String[] args) {
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        
+        // OFFER operations - Add elements
+        deque.offer(55);        // Add at end
+        deque.offerFirst(2);    // Add at front
+        deque.offerLast(100);   // Add at end
+        System.out.println(deque);
+        // Output: [2, 55, 100]
+        
+        // PEEK operations - View elements
+        System.out.println("First: " + deque.peekFirst());  // 2
+        System.out.println("Last: " + deque.peekLast());    // 100
+        System.out.println("Peek: " + deque.peek());        // 2
+        
+        // POLL operations - Remove elements
+        System.out.println("Poll first: " + deque.pollFirst());  // 2
+        System.out.println("Poll last: " + deque.pollLast());    // 100
+        System.out.println("After polls: " + deque);  // [55]
+    }
+}
+```
+
+**Deque Methods:**
+```
+Front Operations:          Rear Operations:
+offerFirst(E)             offerLast(E)
+peekFirst()               peekLast()
+pollFirst()               pollLast()
+getFirst()                getLast()
+removeFirst()             removeLast()
+```
+
+**Complexity:**
+- ⏱️ **Time:** O(1) for all operations
+- 💾 **Space:** O(n) where n is number of elements
+
+---
+
+### 3️⃣ **PriorityQueue - Min/Max Heap**
+
+> **PriorityQueue** maintains elements in priority order (default: min heap). Useful for scheduling, load balancing, etc.
+
+```java
+import java.util.*;
+
+public class PriorityQueueDemo {
+    public static void main(String[] args) {
+        // Min Heap (default) - smaller elements have higher priority
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        
+        minHeap.offer(55);
+        minHeap.offer(100);
+        minHeap.offer(1);
+        minHeap.offer(8);
+        
+        System.out.println("Min Heap: " + minHeap);
+        // Output: [1, 8, 55, 100]
+        
+        // Poll removes minimum element
+        System.out.println("Polled: " + minHeap.poll());  // 1
+        System.out.println("After poll: " + minHeap);     // [8, 55, 100]
+    }
+}
+```
+
+**Max Heap using Comparator:**
+
+```java
+import java.util.*;
+
+public class MaxHeapDemo {
+    public static void main(String[] args) {
+        // Max Heap - larger elements have higher priority
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(
+            Comparator.reverseOrder()
+        );
+        
+        maxHeap.offer(55);
+        maxHeap.offer(100);
+        maxHeap.offer(1);
+        maxHeap.offer(8);
+        
+        System.out.println("Max Heap: " + maxHeap);
+        // Output: [100, 55, 8, 1]
+        
+        // Poll removes maximum element
+        System.out.println("Polled: " + maxHeap.poll());  // 100
+        System.out.println("After poll: " + maxHeap);     // [55, 8, 1]
+    }
+}
+```
+
+**PriorityQueue Complexity:**
+| Operation | Time |
+|:----------|:----:|
+| add/offer | O(log n) |
+| peek | O(1) |
+| poll | O(log n) |
+| contains | O(n) |
+
+---
+
+### ⚡ Problem: Find K Largest Elements
+
+**Problem:** Find the k largest elements in an array efficiently.
+
+```java
+import java.util.*;
+
+public class KLargestElements {
+    public static void main(String[] args) {
+        int[] arr = {5, 1, 10, 2, 8, 12, 3};
+        int k = 3;
+        
+        // Min Heap approach - maintain k largest
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        
+        for (int val : arr) {
+            minHeap.offer(val);
+            
+            // Keep only k elements
+            // When size > k, remove smallest
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+        
+        System.out.println("K largest: " + minHeap);
+        // Output: [8, 10, 12] (k=3 largest elements)
+    }
+}
+```
+
+**How it works:**
+```
+arr = [5, 1, 10, 2, 8, 12, 3], k = 3
+
+Step 1: offer 5 → heap = [5]
+Step 2: offer 1 → heap = [1, 5]
+Step 3: offer 10 → heap = [1, 5, 10]
+Step 4: offer 2 → heap = [1, 5, 10], size=4 > k, poll → heap = [2, 5, 10]
+Step 5: offer 8 → heap = [2, 5, 8, 10], size=4 > k, poll → heap = [5, 8, 10]
+Step 6: offer 12 → heap = [5, 8, 10, 12], size=4 > k, poll → heap = [8, 10, 12]
+Step 7: offer 3 → heap = [3, 8, 10, 12], size=4 > k, poll → heap = [8, 10, 12]
+
+Result: [8, 10, 12] (3 largest elements) ✅
+```
+
+**Complexity:** O(n log k) - much better than sorting all!
+
+---
+
+### 🎯 K Smallest Elements (Max Heap)
+
+```java
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+
+int k = 3;
+for (int val : arr) {
+    maxHeap.offer(val);
+    if (maxHeap.size() > k) {
+        maxHeap.poll();  // Remove largest
+    }
+}
+
+System.out.println("K smallest: " + maxHeap);
+// Output: [1, 2, 3] (k=3 smallest elements)
+```
+
+---
+
+</details>
+
+<details open>
+<summary><h3>👥 Comparators - Custom Sorting</h3></summary>
+
+> **Comparator** defines custom sorting logic for objects beyond natural ordering.
+
+### 1️⃣ **Anonymous Class Comparator**
+
+```java
+import java.util.*;
+
+public class ComparatorDemo1 {
+    public static void main(String[] args) {
+        List<Integer> arrList = new ArrayList<>(
+            Arrays.asList(45, 12, 23, 90)
+        );
+        
+        // Sort by last digit
+        Comparator<Integer> byLastDigit = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer a, Integer b) {
+                if (a % 10 > b % 10) {
+                    return 1;    // a comes after b
+                } else {
+                    return -1;   // a comes before b
+                }
+            }
+        };
+        
+        Collections.sort(arrList, byLastDigit);
+        System.out.println(arrList);
+        // Output: [12, 23, 45, 90] (sorted by last digit: 2, 3, 5, 0)
+    }
+}
+```
+
+**Compare return values:**
+```
+return 1  → First param comes after second
+return -1 → First param comes before second
+return 0  → Equal order
+```
+
+---
+
+### 2️⃣ **Lambda Expression Comparator (Java 8+)**
+
+```java
+import java.util.*;
+
+public class ComparatorDemo2 {
+    public static void main(String[] args) {
+        List<Integer> arrList = new ArrayList<>(
+            Arrays.asList(45, 12, 23, 90)
+        );
+        
+        // Sort by: evens first, then odds
+        Comparator<Integer> evenFirst = (Integer a, Integer b) -> {
+            if (a % 2 == 0) {
+                return -1;  // Even comes first
+            } else {
+                return 1;   // Odd comes last
+            }
+        };
+        
+        Collections.sort(arrList, evenFirst);
+        System.out.println(arrList);
+        // Output: [12, 90, 45, 23] (evens: 12, 90; odds: 45, 23)
+    }
+}
+```
+
+---
+
+### 3️⃣ **Sorting Custom Objects**
+
+```java
+class Student {
+    String name;
+    int age;
+    
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+    
+    @Override
+    public String toString() {
+        return "Student{" + "name=" + name + ", age=" + age + '}';
+    }
+}
+
+public class SortStudents {
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        
+        Comparator<Student> byAge = (Student a, Student b) -> {
+            if (a.age > b.age)
+                return 1;
+            else
+                return -1;
+        };
+        
+        students.add(new Student(26, "Shivam"));
+        students.add(new Student(29, "Mohini"));
+        students.add(new Student(24, "Sejal"));
+        students.add(new Student(22, "Titheee"));
+        
+        Collections.sort(students, byAge);
+        
+        for (Student val : students)
+            System.out.println(val);
+        
+        // Output:
+        // Student{name=Titheee, age=22}
+        // Student{name=Sejal, age=24}
+        // Student{name=Shivam, age=26}
+        // Student{name=Mohini, age=29}
+    }
+}
+```
+
+---
+
+</details>
+
+<details open>
+<summary><h3>👉 Two Pointers Technique</h3></summary>
+
+> **Two Pointers** uses two indices to solve problems efficiently, reducing complexity from O(n²) to O(n).
+
+### 1️⃣ **Type 1: Opposite Direction (Start & End)**
+
+**Use when:** Looking for pairs that sum to target, valid palindromes, etc.
+
+```java
+public class TwoPointersOpposite {
+    // Problem: Find two numbers that sum to target
+    public static void main(String[] args) {
+        int[] arr = {1, 5, 7, 11};
+        int target = 12;
+        
+        int left = 0;
+        int right = arr.length - 1;
+        
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            
+            if (sum == target) {
+                System.out.println("Found: " + arr[left] + " + " + arr[right]);
+                return;
+            } else if (sum < target) {
+                left++;  // Need larger sum
+            } else {
+                right--;  // Need smaller sum
+            }
+        }
+        
+        System.out.println("No pair found");
+    }
+}
+```
+
+**Complexity:** O(n) time, O(1) space
+
+---
+
+### 2️⃣ **Type 2: Same Direction (Slow & Fast)**
+
+**Use when:** Removing duplicates, moving elements, linked list problems.
+
+```java
+public class TwoPointersSameDirection {
+    // Problem: Move all zeros to end
+    public static void moveZeroes(int[] arr) {
+        int j = 0;  // Position for next non-zero
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                // Swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {0, 4, 0, 9};
+        moveZeroes(arr);
+        System.out.println(Arrays.toString(arr));
+        // Output: [4, 9, 0, 0]
+    }
+}
+```
+
+**Complexity:** O(n) time, O(1) space
+
+---
+
+### 3️⃣ **Type 3: Pointer in Different Arrays**
+
+**Use when:** Merging sorted arrays, finding common elements.
+
+```java
+public class TwoPointersDifferentArrays {
+    // Problem: Merge two sorted arrays
+    public static void merge(int[] arr1, int[] arr2, int[] result) {
+        int p1 = 0;     // Pointer for arr1
+        int p2 = 0;     // Pointer for arr2
+        int p = 0;      // Pointer for result
+        
+        while (p1 < arr1.length && p2 < arr2.length) {
+            if (arr1[p1] <= arr2[p2]) {
+                result[p++] = arr1[p1++];
+            } else {
+                result[p++] = arr2[p2++];
+            }
+        }
+        
+        // Add remaining elements
+        while (p1 < arr1.length) {
+            result[p++] = arr1[p1++];
+        }
+        while (p2 < arr2.length) {
+            result[p++] = arr2[p2++];
+        }
+    }
+    
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5};
+        int[] arr2 = {2, 4, 6};
+        int[] result = new int[6];
+        
+        merge(arr1, arr2, result);
+        System.out.println(Arrays.toString(result));
+        // Output: [1, 2, 3, 4, 5, 6]
+    }
+}
+```
+
+**Complexity:** O(m + n) time, O(m + n) space
+
+---
+
+</details>
+
+<details open>
+<summary><h3>🪟 Sliding Window Technique</h3></summary>
+
+> **Sliding Window** maintains a fixed-size window that slides through the array, useful for contiguous subarrays.
+
+### 1️⃣ **Fixed-Size Window**
+
+**Problem:** Find maximum sum of contiguous subarray of size k.
+
+```java
+public class FixedSlidingWindow {
+    public static void main(String[] args) {
+        int[] arr = {1, 12, -5, -6, 50, 3};
+        int k = 4;
+        
+        // Step 1: Calculate sum of first window
+        int currentSum = 0;
+        for (int i = 0; i < k; i++) {
+            currentSum += arr[i];
+        }
+        
+        int maxSum = currentSum;
+        
+        // Step 2: Slide window across array
+        for (int i = k; i < arr.length; i++) {
+            // Remove leftmost element of previous window
+            // Add new rightmost element
+            currentSum += arr[i] - arr[i - k];
+            
+            // Update maximum
+            maxSum = Math.max(maxSum, currentSum);
+        }
+        
+        System.out.println("Maximum sum: " + maxSum);
+        System.out.println("Average: " + (float) maxSum / k);
+        // Output: Maximum sum: 41, Average: 10.25
+    }
+}
+```
+
+**Dry Run:**
+```
+Array: [1, 12, -5, -6, 50, 3], k = 4
+
+Window [1, 12, -5, -6] → sum = 2
+Window [12, -5, -6, 50] → sum = 51
+Window [-5, -6, 50, 3] → sum = 42
+
+Maximum: 51 ✅
+```
+
+**Complexity:** O(n) time, O(1) space
+
+---
+
+### 2️⃣ **Variable-Size Window**
+
+**Problem:** Find longest substring without repeating characters.
+
+```java
+import java.util.*;
+
+public class VariableSlidingWindow {
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        
+        Map<Character, Integer> charIndex = new HashMap<>();
+        int maxLength = 0;
+        int left = 0;
+        
+        for (int right = 0; right < s.length(); right++) {
+            char ch = s.charAt(right);
+            
+            // If character already exists, move left pointer
+            if (charIndex.containsKey(ch)) {
+                left = Math.max(left, charIndex.get(ch) + 1);
+            }
+            
+            // Update character's latest position
+            charIndex.put(ch, right);
+            
+            // Update maximum length
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+        
+        System.out.println("Longest substring length: " + maxLength);
+        // Output: 3 (for "abc")
+    }
+}
+```
+
+**Complexity:** O(n) time, O(min(m, n)) space where m is charset size
+
+---
+
+### 📊 Sliding Window Patterns
+
+| Pattern | Window | Use Case | Example |
+|:--------|:------:|:---------|:--------|
+| Fixed | Constant k | Max/Min in subarray | Max sum of k elements |
+| Variable expand | Left fixed | Find longest | Longest substring |
+| Variable shrink | Right fixed | Find shortest | Min window substring |
+| Two conditions | Both move | Complex problems | Container with water |
+
+---
+
+</details>
+
+---
+
+## ✅ Problems Covered - Day 3
+
+### 📋 **Queue, Comparators & Advanced Techniques**
+
+| # | Problem | Difficulty | Concept | Status |
+|:-:|:--------|:----------:|:--------|:------:|
+| 1 | Queue Basic Operations | 🟢 Easy | Queue FIFO | ✅ |
+| 2 | ArrayDeque Operations | 🟢 Easy | Deque double-ended | ✅ |
+| 3 | PriorityQueue Min Heap | 🟡 Medium | Min priority ordering | ✅ |
+| 4 | PriorityQueue Max Heap | 🟡 Medium | Max priority ordering | ✅ |
+| 5 | K Largest Elements | 🟡 Medium | PriorityQueue + Logic | ✅ |
+| 6 | K Smallest Elements | 🟡 Medium | PriorityQueue reverse | ✅ |
+| 7 | Comparator - Last Digit Sort | 🟡 Medium | Custom sorting | ✅ |
+| 8 | Comparator - Even First Sort | 🟡 Medium | Comparator logic | ✅ |
+| 9 | Student Object Sorting | 🟡 Medium | Custom object sorting | ✅ |
+| 10 | Two Pointers - Opposite Direction | 🟡 Medium | Two pointers basics | ✅ |
+| 11 | Two Pointers - Same Direction | 🟡 Medium | Move elements | ✅ |
+| 12 | Two Pointers - Different Arrays | 🟡 Medium | Merge sorted arrays | ✅ |
+| 13 | Sliding Window - Fixed Size | 🟡 Medium | Max sum subarray K | ✅ |
+| 14 | Sliding Window - Variable Size | 🟡 Medium | Longest substring | ✅ |
+
+---
+
+## 🎓 Quick Reference - Day 3 Highlights
+
+### Queue Operations Summary
+
+```java
+// Queue (FIFO)
+Queue<Integer> q = new LinkedList<>();
+q.add(1);           // O(1) - Add to rear
+q.remove();         // O(1) - Remove from front
+q.element();        // O(1) - View front
+q.peek();           // O(1) - Safe view
+
+// Deque (Double-ended)
+ArrayDeque<Integer> dq = new ArrayDeque<>();
+dq.offerFirst(1);   // Add to front
+dq.offerLast(2);    // Add to rear
+dq.pollFirst();     // Remove from front
+dq.pollLast();      // Remove from rear
+
+// PriorityQueue (Heap)
+PriorityQueue<Integer> pq = new PriorityQueue<>();      // Min heap
+PriorityQueue<Integer> pq2 = new PriorityQueue<>(Comparator.reverseOrder()); // Max heap
+pq.offer(5);        // O(log n)
+pq.poll();          // O(log n) - Removes highest priority
+```
+
+### Comparator Pattern
+
+```java
+// Comparator syntax
+Comparator<T> cmp = (T a, T b) -> {
+    // return 1:  a > b (a comes after b)
+    // return -1: a < b (a comes before b)
+    // return 0:  a == b (equal)
+};
+
+Collections.sort(list, cmp);
+```
+
+### Two Pointers Pattern
+
+```java
+// Type 1: Opposite ends
+int left = 0, right = arr.length - 1;
+while (left < right) {
+    // Process
+    left++;
+    right--;
+}
+
+// Type 2: Same direction
+int i = 0, j = 0;
+while (i < arr.length) {
+    if (condition) {
+        // Process
+        j++;
+    }
+    i++;
+}
+
+// Type 3: Different arrays
+int p1 = 0, p2 = 0;
+while (p1 < arr1.length && p2 < arr2.length) {
+    if (arr1[p1] < arr2[p2]) {
+        // Use arr1[p1]
+        p1++;
+    } else {
+        // Use arr2[p2]
+        p2++;
+    }
+}
+```
+
+### Sliding Window Pattern
+
+```java
+// Fixed window (size k)
+int windowSum = 0;
+for (int i = 0; i < k; i++) {
+    windowSum += arr[i];
+}
+int maxSum = windowSum;
+
+for (int i = k; i < arr.length; i++) {
+    windowSum += arr[i] - arr[i - k];
+    maxSum = Math.max(maxSum, windowSum);
+}
+
+// Variable window
+Set<Character> window = new HashSet<>();
+int left = 0;
+for (int right = 0; right < arr.length; right++) {
+    while (window.contains(arr[right])) {
+        window.remove(arr[left++]);
+    }
+    window.add(arr[right]);
+    // Process window [left, right]
+}
+```
+
+---
+
+## ✨ Day 3 Key Takeaways
+
+### 🎯 What You Learned
+
+1. **Queue Types** - Linear (LinkedList), Double-ended (ArrayDeque), Priority (PriorityQueue)
+2. **Comparators** - Custom sorting with anonymous classes and lambda expressions
+3. **Two Pointers** - Three main types for different problem scenarios
+4. **Sliding Window** - Fixed and variable size windows for efficient processing
+5. **Problem Patterns** - K largest/smallest, max sum subarray, substring problems
+
+### 💡 Important Insights
+
+- **PriorityQueue** is O(log n) not O(1), but peek() is O(1)
+- **Comparators** return 1/-1/0, not true/false
+- **Two pointers** reduces nested loops from O(n²) to O(n)
+- **Sliding window** is optimal for contiguous subarray problems
+- **Fixed window** is simpler; variable window needs careful boundary handling
+
+### 🚀 Optimization Techniques
+
+| Problem | Brute Force | Optimized | Improvement |
+|:--------|:-----------:|:---------:|:-----------:|
+| Max sum K | O(n·k) | O(n) | Sliding window |
+| K largest | O(n log n) | O(n log k) | PriorityQueue |
+| Remove duplicates | O(n²) | O(n) | Two pointers |
+| Merge sorted | O(n log n) | O(n) | Two pointers |
+
+---
+
+## 💻 Code Structure Best Practices
+
+```java
+// Import everything from collections
+import java.util.*;
+import java.util.regex.*;
+
+// Queue operations
+Queue<T> q = new LinkedList<>();
+q.add(element);
+q.remove();
+q.peek();
+
+// Priority-based processing
+PriorityQueue<T> pq = new PriorityQueue<>();
+// or
+PriorityQueue<T> pq = new PriorityQueue<>(Comparator.reverseOrder());
+
+// Custom sorting
+Comparator<T> cmp = (T a, T b) -> {
+    // Comparison logic
+    return result; // 1, -1, or 0
+};
+Collections.sort(list, cmp);
+
+// Sliding window
+for (int right = 0; right < arr.length; right++) {
+    // Add element
+    while (invalidWindow) {
+        // Remove element
+        left++;
+    }
+    // Process valid window [left, right]
+}
+```
+
+---
+
+## 🏆 Performance Comparison
+
+### PriorityQueue vs HashMap vs TreeMap
+
+```
+Operation         PriorityQueue    HashMap    TreeMap
+Insert           O(log n)         O(1)       O(log n)
+Remove min/max   O(log n)         —          O(log n)
+Search           O(n)             O(1)       O(log n)
+Memory           O(n)             O(n)       O(n)
+Ordered          By priority      No         By key
+```
+
+### Two Pointers vs Brute Force
+
+```
+Problem          Brute Force      Two Pointers    Improvement
+Pair sum         O(n²)            O(n)            2 pointers opposite
+Move elements    O(n²)            O(n)            2 pointers same direction
+Merge sorted     O(n log n)       O(n)            2 pointers both arrays
+Partition        O(n²)            O(n)            2 pointers opposite
+```
+
 
 ## 🎓 Resources & References
 
